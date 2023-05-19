@@ -15,6 +15,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
   String _result = '';
   String _playerChoice = '';
   String _computerChoice = '';
+  String _previousComputerChoice = '';
 
   final List<String> _choices = ['Pedra', 'Papel', 'Tesoura'];
 
@@ -25,15 +26,20 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
         return;
       }
 
+      print('Usuário => atual: $playerChoice | anterior: $_playerChoice');
       _playerChoice = playerChoice;
+      
 
       final Random random = Random();
       int computerIndex;
       do {
         computerIndex = random.nextInt(3);
-      } while (_choices[computerIndex] == _playerChoice);
+      } while (_choices[computerIndex] == _playerChoice ||
+          _choices[computerIndex] == _previousComputerChoice);
 
+      _previousComputerChoice = _computerChoice;
       _computerChoice = _choices[computerIndex];
+      print('PC => atual: $_computerChoice | anterior: $_previousComputerChoice');
 
       _result = _getResult(_playerChoice, _computerChoice)!;
     });
