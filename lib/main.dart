@@ -13,7 +13,7 @@ class JokenpoGame extends StatelessWidget {
       title: 'Jokenpo Game',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
         useMaterial3: false,
       ),
       home: const JokenpoHomePage(),

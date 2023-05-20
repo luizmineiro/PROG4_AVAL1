@@ -51,17 +51,17 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
     switch (_computerChoice) {
       case "Pedra":
         setState(() {
-          _imagemApp = const AssetImage("assets/images/pedra.png");
+          _imagemApp = const AssetImage("assets/images/rock.png");
         });
         break;
       case "Papel":
         setState(() {
-          _imagemApp = const AssetImage("assets/images/papel.png");
+          _imagemApp = const AssetImage("assets/images/paper.png");
         });
         break;
       case "Tesoura":
         setState(() {
-          _imagemApp = const AssetImage("assets/images/tesoura.png");
+          _imagemApp = const AssetImage("assets/images/scissors.png");
         });
         break;
     }
@@ -107,6 +107,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
             ),
             Image(
               image: _imagemApp,
+              height: 125,
             ),
             const Text(
               'Escolha sua jogada:',
@@ -121,27 +122,17 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
               children: <Widget>[
                 GestureDetector(
                   onTap: () => _playGame('Pedra'),
-                  child: Image.asset('assets/images/pedra.png', height: 95),
+                  child: Image.asset('assets/images/rock.png', height: 95),
                 ),
                 GestureDetector(
                   onTap: () => _playGame('Papel'),
-                  child: Image.asset('assets/images/papel.png', height: 95),
+                  child: Image.asset('assets/images/paper.png', height: 95),
                 ),
                 GestureDetector(
                   onTap: () => _playGame('Tesoura'),
-                  child: Image.asset('assets/images/tesoura.png', height: 95),
+                  child: Image.asset('assets/images/scissors.png', height: 95),
                 ),
               ],
-            ),
-            const SizedBox(height: 20.0),
-            Text(
-              'Você escolheu: $_playerChoice',
-              style: const TextStyle(fontSize: 20.0),
-            ),
-            const SizedBox(height: 10.0),
-            Text(
-              'O computador escolheu: $_computerChoice',
-              style: const TextStyle(fontSize: 20.0),
             ),
             const SizedBox(height: 20.0),
             Text(
@@ -149,6 +140,17 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
               style: const TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 100,
+                width: 180,
+                decoration: BoxDecoration(color: Colors.deepPurpleAccent),
+                child: Column(
+                  children: [],
+                ),
               ),
             ),
           ],
