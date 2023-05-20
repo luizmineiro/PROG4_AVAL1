@@ -110,7 +110,10 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
             ),
             const Text(
               'Escolha sua jogada:',
-              style: TextStyle(fontSize: 20.0),
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 20.0),
             Row(
