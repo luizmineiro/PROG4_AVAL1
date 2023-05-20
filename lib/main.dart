@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jokenpo2_teste/src/screen/jokenpo_home_page.dart';
 import 'package:jokenpo2_teste/src/screen/splash_screen.dart';
 
 void main() => runApp(const JokenpoGame());
@@ -15,7 +16,11 @@ class JokenpoGame extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         useMaterial3: false,
       ),
-      home: const SplashScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (_) => const SplashScreen(),
+        '/home': (_) => const JokenpoHomePage(),
+      },
     );
   }
 }

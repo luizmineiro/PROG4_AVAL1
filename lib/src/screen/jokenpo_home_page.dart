@@ -146,8 +146,9 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
                 height: 155,
                 width: 300,
                 decoration: BoxDecoration(
+                  color: Colors.deepPurpleAccent,
                   border: Border.all(
-                    color: Colors.deepPurpleAccent,
+                    color: Colors.black,
                     width: 3,
                   ),
                 ),
@@ -161,7 +162,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+          Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
         },
         child: const Icon(Icons.replay_sharp),
       ),
