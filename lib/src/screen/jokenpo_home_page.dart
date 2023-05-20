@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, avoid_print
 
 import 'dart:math';
 
@@ -34,8 +34,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       int computerIndex;
       do {
         computerIndex = random.nextInt(3);
-      } while (_choices[computerIndex] == _playerChoice ||
-          _choices[computerIndex] == _previousComputerChoice);
+      } while (_choices[computerIndex] == _playerChoice || _choices[computerIndex] == _previousComputerChoice);
 
       _previousComputerChoice = _computerChoice;
       _computerChoice = _choices[computerIndex];
@@ -155,7 +154,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
         onPressed: () {
           Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
         },
-        child: const Icon(Icons.restart_alt_outlined),
+        child: const Icon(Icons.replay_sharp),
       ),
     );
   }
