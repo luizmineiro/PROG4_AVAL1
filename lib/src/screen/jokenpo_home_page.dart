@@ -34,7 +34,8 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       int computerIndex;
       do {
         computerIndex = random.nextInt(3);
-      } while (_choices[computerIndex] == _playerChoice || _choices[computerIndex] == _previousComputerChoice);
+      } while (_choices[computerIndex] == _playerChoice ||
+          _choices[computerIndex] == _previousComputerChoice);
 
       _previousComputerChoice = _computerChoice;
       _computerChoice = _choices[computerIndex];
