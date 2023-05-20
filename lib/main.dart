@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jokenpo2_teste/src/screen/splash_screen.dart';
 
-import 'src/screen/jokenpo_home_page.dart';
-
 void main() => runApp(const JokenpoGame());
 
 class JokenpoGame extends StatelessWidget {
