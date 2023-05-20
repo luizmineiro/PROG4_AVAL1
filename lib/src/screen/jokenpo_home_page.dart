@@ -1,7 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api, avoid_print
 
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class JokenpoHomePage extends StatefulWidget {
@@ -33,7 +32,8 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       int computerIndex;
       do {
         computerIndex = random.nextInt(3);
-      } while (_choices[computerIndex] == _playerChoice || _choices[computerIndex] == _previousComputerChoice);
+      } while (_choices[computerIndex] == _playerChoice ||
+          _choices[computerIndex] == _previousComputerChoice);
 
       _previousComputerChoice = _computerChoice;
       _computerChoice = _choices[computerIndex];
@@ -47,17 +47,17 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
     switch (_computerChoice) {
       case "Pedra":
         setState(() {
-          _imagemApp = const AssetImage("assets/images/rock.png");
+          _imagemApp = const AssetImage("assets/images/pedra.png");
         });
         break;
       case "Papel":
         setState(() {
-          _imagemApp = const AssetImage("assets/images/paper.png");
+          _imagemApp = const AssetImage("assets/images/papel.png");
         });
         break;
       case "Tesoura":
         setState(() {
-          _imagemApp = const AssetImage("assets/images/scissors.png");
+          _imagemApp = const AssetImage("assets/images/tesoura.png");
         });
         break;
     }
@@ -91,7 +91,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              "Escolha do App",
+              "Escolha do App:",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 22,
@@ -120,15 +120,15 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
               children: <Widget>[
                 GestureDetector(
                   onTap: () => _playGame('Pedra'),
-                  child: Image.asset('assets/images/rock.png', height: 95),
+                  child: Image.asset('assets/images/pedra.png', height: 95),
                 ),
                 GestureDetector(
                   onTap: () => _playGame('Papel'),
-                  child: Image.asset('assets/images/paper.png', height: 95),
+                  child: Image.asset('assets/images/papel.png', height: 95),
                 ),
                 GestureDetector(
                   onTap: () => _playGame('Tesoura'),
-                  child: Image.asset('assets/images/scissors.png', height: 95),
+                  child: Image.asset('assets/images/tesoura.png', height: 95),
                 ),
               ],
             ),
@@ -146,8 +146,10 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
                 height: 155,
                 width: 300,
                 decoration: BoxDecoration(
+                  color: Colors.purple.shade300,
+                  borderRadius: BorderRadius.circular(10.0),
                   border: Border.all(
-                    color: Colors.deepPurpleAccent,
+                    color: Colors.black,
                     width: 3,
                   ),
                 ),
