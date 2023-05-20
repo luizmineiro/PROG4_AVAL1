@@ -90,29 +90,31 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const Text(
+              "Escolha do App",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              child: Image(
+                image: _imagemApp,
+                height: 122,
+              ),
+            ),
             const Padding(
-              padding: EdgeInsets.only(top: 32, bottom: 16),
+              padding: EdgeInsets.only(bottom: 22),
               child: Text(
-                "Escolha do App",
-                textAlign: TextAlign.center,
+                'Escolha sua jogada:',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            Image(
-              image: _imagemApp,
-              height: 125,
-            ),
-            const Text(
-              'Escolha sua jogada:',
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 20.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -139,12 +141,17 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 22),
               child: Container(
-                height: 100,
-                width: 180,
-                decoration: BoxDecoration(color: Colors.deepPurpleAccent),
-                child: Column(
+                height: 155,
+                width: 300,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.deepPurpleAccent,
+                    width: 3,
+                  ),
+                ),
+                child: const Column(
                   children: [],
                 ),
               ),
