@@ -27,20 +27,16 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
         return;
       }
 
-      print('Usuário => atual: $playerChoice | anterior: $_playerChoice');
       _playerChoice = playerChoice;
 
       final Random random = Random();
       int computerIndex;
       do {
         computerIndex = random.nextInt(3);
-      } while (_choices[computerIndex] == _playerChoice ||
-          _choices[computerIndex] == _previousComputerChoice);
+      } while (_choices[computerIndex] == _playerChoice || _choices[computerIndex] == _previousComputerChoice);
 
       _previousComputerChoice = _computerChoice;
       _computerChoice = _choices[computerIndex];
-      print(
-          'PC => atual: $_computerChoice | anterior: ${_previousComputerChoice}');
 
       _result = _getResult(_playerChoice, _computerChoice)!;
     });
@@ -94,7 +90,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(top: 32, bottom: 16),
               child: Text(
                 "Escolha do App",
