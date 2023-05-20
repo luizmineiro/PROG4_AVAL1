@@ -15,7 +15,8 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
   String _result = '';
   String _playerChoice = '';
   String _computerChoice = '';
-  String _previousComputerChoice = '';
+  String _previousComputerChoice = "";
+  var _imagemApp = const AssetImage("assets/images/padrao.png");
 
   final List<String> _choices = ['Pedra', 'Papel', 'Tesoura'];
 
@@ -28,7 +29,6 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
 
       print('Usuário => atual: $playerChoice | anterior: $_playerChoice');
       _playerChoice = playerChoice;
-      
 
       final Random random = Random();
       int computerIndex;
@@ -39,13 +39,33 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
 
       _previousComputerChoice = _computerChoice;
       _computerChoice = _choices[computerIndex];
-      print('PC => atual: $_computerChoice | anterior: $_previousComputerChoice');
+      print(
+          'PC => atual: $_computerChoice | anterior: ${_previousComputerChoice}');
 
       _result = _getResult(_playerChoice, _computerChoice)!;
     });
   }
 
   String? _getResult(String playerChoice, String computerChoice) {
+    //Exibição da imagem escolhida pelo App
+    switch (_computerChoice) {
+      case "Pedra":
+        setState(() {
+          _imagemApp = const AssetImage("assets/images/pedra.png");
+        });
+        break;
+      case "Papel":
+        setState(() {
+          _imagemApp = const AssetImage("assets/images/papel.png");
+        });
+        break;
+      case "Tesoura":
+        setState(() {
+          _imagemApp = const AssetImage("assets/images/tesoura.png");
+        });
+        break;
+    }
+
     Map<String, String> resultMappings = {
       'PedraTesoura': 'Você venceu!',
       'PapelPedra': 'Você venceu!',
@@ -74,6 +94,20 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: 32, bottom: 16),
+              child: Text(
+                "Escolha do App",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Image(
+              image: _imagemApp,
+            ),
             const Text(
               'Escolha sua jogada:',
               style: TextStyle(fontSize: 20.0),
@@ -82,17 +116,17 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                ElevatedButton(
-                  onPressed: () => _playGame('Pedra'),
-                  child: const Text('Pedra'),
+                GestureDetector(
+                  onTap: () => _playGame('Pedra'),
+                  child: Image.asset('assets/images/pedra.png', height: 95),
                 ),
-                ElevatedButton(
-                  onPressed: () => _playGame('Papel'),
-                  child: const Text('Papel'),
+                GestureDetector(
+                  onTap: () => _playGame('Papel'),
+                  child: Image.asset('assets/images/papel.png', height: 95),
                 ),
-                ElevatedButton(
-                  onPressed: () => _playGame('Tesoura'),
-                  child: const Text('Tesoura'),
+                GestureDetector(
+                  onTap: () => _playGame('Tesoura'),
+                  child: Image.asset('assets/images/tesoura.png', height: 95),
                 ),
               ],
             ),
