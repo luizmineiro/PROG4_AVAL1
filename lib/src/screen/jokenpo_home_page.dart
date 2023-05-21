@@ -34,7 +34,8 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       int computerIndex;
       do {
         computerIndex = random.nextInt(3);
-      } while (_choices[computerIndex] == _playerChoice || _choices[computerIndex] == _previousComputerChoice);
+      } while (_choices[computerIndex] == _playerChoice ||
+          _choices[computerIndex] == _previousComputerChoice);
 
       _previousComputerChoice = _computerChoice;
       _computerChoice = _choices[computerIndex];
@@ -150,8 +151,8 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
             Padding(
               padding: const EdgeInsets.only(top: 22),
               child: Container(
-                height: 155,
-                width: 300,
+                height: 150,
+                width: 250,
                 decoration: BoxDecoration(
                   color: Colors.purple.shade300,
                   borderRadius: BorderRadius.circular(10.0),
@@ -162,9 +163,36 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
                 ),
                 child: Column(
                   children: [
-                    const Text("Placar"),
-                    Text("Usuário: $_playerScore"),
-                    Text("Computador: $_computerScore"),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10, bottom: 15),
+                      child: Text(
+                        "Placar",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Usuário: $_playerScore",
+                          style: const TextStyle(
+                            fontSize: 22,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 6,
+                        ),
+                        Text(
+                          "Computador: $_computerScore",
+                          style: const TextStyle(
+                            fontSize: 22,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -174,7 +202,8 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
+          Navigator.of(context)
+              .pushNamedAndRemoveUntil('/home', (route) => false);
         },
         child: const Icon(Icons.replay_sharp),
       ),
