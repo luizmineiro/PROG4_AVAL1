@@ -1,16 +1,33 @@
-# jokenpo2_teste
 
-A new Flutter project.
+<p align="center">
+      <img src="/assets/images/logo-jokenpo.png" width="200" alt="Logo Frases do dia"/>
+</p>
+<h2 align="center">Sobre 📖</h2>
+   
+<p align="center">
+  1° Avaliação de Progrmação 4 - App Jokenpo<br> Grupo: Celenny Cristhyne, João Luiz Mineiro
+</p>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div align="center">
+   <h2 align="center">Contribuidores 💡</h2>
+   <table>
+   <tr>
+      <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/celenny" width="100px;" alt="Foto de Celenny"/><br>
+        <sub>
+          <b>Celenny</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars1.githubusercontent.com/luizmineiro" width="100px;" alt="Foto de João Luiz Mineiro"/><br>
+        <sub>
+          <b>João Luiz</b>
+        </sub>
+      </a>
+    </td>
+   </tr>
+   </table>
+</div>
