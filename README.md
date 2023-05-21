@@ -5,7 +5,7 @@
 <h2 align="center">Sobre 📖</h2>
    
 <p align="center">
-  1° Avaliação de Progrmação 4 - App Jokenpo<br> Grupo: Celenny Cristhyne, João Luiz Mineiro
+  1° Avaliação de Programação 4 - App Jokenpo<br> Grupo: Celenny Cristhyne, João Luiz Mineiro
 </p>
 
 <h2 align="center">Como Usar 🤔</h2>
