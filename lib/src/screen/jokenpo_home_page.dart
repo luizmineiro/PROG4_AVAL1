@@ -14,7 +14,9 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
   String _result = '';
   String _playerChoice = '';
   String _computerChoice = '';
-  String _previousComputerChoice = "";
+  String _previousComputerChoice = '';
+  int _playerScore = 0;
+  int _computerScore = 0;
   var _imagemApp = const AssetImage("assets/images/padrao.png");
 
   final List<String> _choices = ['Pedra', 'Papel', 'Tesoura'];
@@ -38,6 +40,12 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       _computerChoice = _choices[computerIndex];
 
       _result = _getResult(_playerChoice, _computerChoice)!;
+
+      if (_result == "Você venceu!") {
+        _playerScore++;
+      } else if (_result == "Você perdeu!") {
+        _computerScore++;
+      }
     });
   }
 
@@ -152,8 +160,12 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
                     width: 3,
                   ),
                 ),
-                child: const Column(
-                  children: [],
+                child: Column(
+                  children: [
+                    const Text("Placar"),
+                    Text("Usuário: $_playerScore"),
+                    Text("Computador: $_computerScore"),
+                  ],
                 ),
               ),
             ),
