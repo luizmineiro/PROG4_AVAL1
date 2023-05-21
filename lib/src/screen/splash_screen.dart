@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (_) => const JokenpoHomePage(),
@@ -35,29 +35,32 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Colors.blue,
-            Colors.purple,
-          ], begin: Alignment.topRight, end: Alignment.bottomLeft),
+          gradient: LinearGradient(
+            colors: [
+              Colors.deepPurple,
+              Colors.purple,
+            ],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          ),
         ),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.edit,
-              size: 80,
-              color: Colors.white,
+            const Text(
+              'Jokenpo Game',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
-              'Flutter tips',
-              style: TextStyle(
-                fontStyle: FontStyle.italic,
-                color: Colors.white,
-                fontSize: 32,
-              ),
+            Image.asset(
+              'assets/images/logo-jokenpo.png',
+              height: 195,
             ),
           ],
         ),
