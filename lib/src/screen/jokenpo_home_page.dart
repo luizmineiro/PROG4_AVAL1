@@ -34,8 +34,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       int computerIndex;
       do {
         computerIndex = random.nextInt(3);
-      } while (_choices[computerIndex] == _playerChoice ||
-          _choices[computerIndex] == _previousComputerChoice);
+      } while (_choices[computerIndex] == _playerChoice || _choices[computerIndex] == _previousComputerChoice);
 
       _previousComputerChoice = _computerChoice;
       _computerChoice = _choices[computerIndex];
@@ -175,7 +174,7 @@ class _JokenpoHomePageState extends State<JokenpoHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+          Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
         },
         child: const Icon(Icons.replay_sharp),
       ),
