@@ -8,6 +8,24 @@
   1° Avaliação de Progrmação 4 - App Jokenpo<br> Grupo: Celenny Cristhyne, João Luiz Mineiro
 </p>
 
+<h2 align="center">Como Usar 🤔</h2>
+
+   ```
+   Primeiro, configure corretamente o ambiente de desenvolvimento em Flutter na sua máquina, veja em: https://flutter.dev/docs/get-started/install
+   
+   - Clone esse repositório:
+   $ git clone https://github.com/luizmineiro/PROG4_AVAL1.git
+
+   - Entre no diretório:
+   $ cd PROG4_AVAL1
+
+   - Instale as dependências:
+   $ flutter pub get
+
+   - Inicie o app: 
+   $ flutter run
+   ```
+
 <div align="center">
    <h2 align="center">Contribuidores 💡</h2>
    <table>
