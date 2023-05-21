@@ -1,4 +1,4 @@
-
+<h1 align="center">Jokenpo Game</h1>
 <p align="center">
       <img src="/assets/images/logo-jokenpo.png" width="200" alt="Logo Frases do dia"/>
 </p>
